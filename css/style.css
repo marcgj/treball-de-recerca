@@ -1,0 +1,54 @@
+
+body{
+    overflow: hidden;
+    background-color: #180f2a;
+    color: #f3f3f3;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+
+}
+
+
+/* Alinea els camps amb les seves etiquetes */
+.propietats {
+    right: 50px;
+    position: fixed;
+    width: 200px;
+    clear: both;
+    padding: 20px 30px;
+    padding-right: 75px;
+  }
+
+  .orbitant{
+    top: 260px;
+  }
+  .planeta{
+    top: 20px;
+  }
+  .boto{
+    top: 250px;
+  }
+  
+  .propietats input {
+    margin: 5px 10px;
+    width: 100%;
+    clear: both;
+  }
+
+  canvas{
+    background-color: transparent;
+  }
+
+  /* Inputs */
+
+  input, select{
+    background-color: transparent;
+    padding: 5px 10px;;
+    color: white;
+    border-color: white;
+    border-style: solid;
+
+  }
+  fieldset{
+    border: 1px groove;
+  }
+  
