@@ -6,6 +6,9 @@ body{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 
 }
+#zoom{
+  float: left;
+}
 
 
 /* Alinea els camps amb les seves etiquetes */
