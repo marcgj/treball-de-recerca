@@ -9,7 +9,7 @@ function canvasSize() {
   canvas.height = window.innerHeight;
 }
 
-var zm = document.getElementById("zoom").value*1e4;
+var zm = 1e4;
 
 
 // Troba el punt mitg del canvas en cada eix aixi per despres poder centrar les orbites en ell
