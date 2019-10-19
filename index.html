@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <input type="range" min="0.5" max="10" value="1" class="slider" step="0.5" id="zoom">
+  <input type="range" min="0.5" max="10" value="1" class="slider" step="0.2" id="zoom">
 
   <canvas id="canvas"></canvas>
     
@@ -21,10 +21,10 @@
       </select><br><br>
 
       <label>Massa Planeta (Kg): </label>
-      <input type="text" name="radi-planeta" id="mplaneta" value="0"><br>
+      <input type="text" name="radi-planeta" id="mplaneta" value="1"><br>
 
       <label>Radi Planeta (m): </label>
-      <input type="text" name="radi-planeta" id="rplaneta" value="0"><br>
+      <input type="text" name="radi-planeta" id="rplaneta" value="1"><br>
 
     </fieldset>
 
@@ -35,13 +35,13 @@
         </select><br><br>
 
 
-      <label>Posisió Inicial (m): </label>
-      <input type="text" placeholder="sX" name="posicio-inicial-x" id="sXi">
-      <input type="text" placeholder="sY" name="posicio-inicial-y" id="sYi"><br>
+      <label>Posició Inicial (m): </label>
+      <input type="text" placeholder="sX" name="posicio-inicial-x" value="1" id="sXi">
+      <input type="text" placeholder="sY" name="posicio-inicial-y" value="1" id="sYi"><br>
 
       <label>Velocitat Inicial (m/s): </label>
-      <input type="text" placeholder="vX" name="velocitat-inicial-x" id="vXi">
-      <input type="text" placeholder="vY" name="velocitat-inicial-y" id="vYi"><br>
+      <input type="text" placeholder="vX" name="velocitat-inicial-x" value="1" id="vXi">
+      <input type="text" placeholder="vY" name="velocitat-inicial-y" value="1" id="vYi"><br>
 
 
     </fieldset>

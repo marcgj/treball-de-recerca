@@ -5,8 +5,8 @@ document.addEventListener("fullscreenchange", canvasSize());
 
 // Canvia les mides del canvas per aixi coincidir amb la pantalla
 function canvasSize() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth*2;
+  canvas.height = window.innerHeight*2;
 }
 
 var zm = 1e4;
@@ -19,9 +19,9 @@ var ofY = canvas.height / 2;
 var ctx = canvas.getContext("2d"); //declarem que ctx = a un canvas 2d
 ctx.strokeStyle = "#f3f3f3";
 
-
-
-// TODO: scale()
+zm = document.getElementById("zoom").value*1e5;
+drawPlanet();
+// TODO: scale() 
 // TODO: periode orbital per dT correcte
 
 // Detecta quan el usuari pitxa la tecla enter, per aixi activar la funció...
@@ -30,8 +30,6 @@ document.addEventListener("keyup", function (tecla) {
     zm = document.getElementById("zoom").value*1e5;
     drawCanvas();
     drawPlanet();
-    console.log(zm);
-    
   }
 });
 
@@ -39,6 +37,7 @@ document.addEventListener("keyup", function (tecla) {
 // Funció encarregada de dibuixar el planeta al centre
 
 function drawPlanet() {
+  
   var pr = parseFloat(document.getElementById("rplaneta").value); //pr = Radi del planeta
   ctx.beginPath();
   ctx.arc(canvas.width / 2, canvas.height / 2, pr / zm, 0, 2 * Math.PI);
@@ -52,8 +51,8 @@ function drawCanvas() {
   // Declaracio de variables 
 
   var G = 6.67408e-11;
-  var sXi = parseFloat(document.getElementById("sXi").value);;
-  var sYi = parseFloat(document.getElementById("sYi").value);;
+  var sXi = parseFloat(document.getElementById("sXi").value);
+  var sYi = parseFloat(document.getElementById("sYi").value);
   var m = parseFloat(document.getElementById("mplaneta").value);
   var vXi = parseFloat(document.getElementById("vXi").value);
   var vYi = parseFloat(document.getElementById("vYi").value);
@@ -61,7 +60,7 @@ function drawCanvas() {
 
   // Temps entre punt i punt
   var t = 0e0;
-  var dt = 0.0005e0;
+  var dt = 0.0008;
 
   var aX;
   var aY;

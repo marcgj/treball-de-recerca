@@ -10,8 +10,8 @@ var planetes = [{
     },
     {
         "nom": "Lluna",
-        "massa": 20,
-        "radi": 20
+        "massa": 7349e22,
+        "radi": 3.84402e8
     },
     {
         "nom": "Mart",
@@ -33,6 +33,13 @@ var presets = [{
         "sX": 0,
         "sY": 6771000,
         "vX": 7660,
+        "vY": 0
+    },
+    {
+        "nom": "Lluna",
+        "sX": 0,
+        "sY": 385000000,
+        "vX": 1023.05556,
         "vY": 0
     },
 ];
