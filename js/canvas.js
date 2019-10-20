@@ -1,16 +1,16 @@
-var canvas = document.querySelector("canvas"); // Selecciona al objecte "canvas"
+var canvas = document.getElementById("canvas"); // Selecciona al objecte "canvas"
+
 canvasSize();
 
-document.addEventListener("fullscreenchange", canvasSize());
+document.addEventListener("resize", canvasSize());
 
 // Canvia les mides del canvas per aixi coincidir amb la pantalla
 function canvasSize() {
-  canvas.width = window.innerWidth*2;
-  canvas.height = window.innerHeight*2;
+  canvas.width = window.innerWidth * 2;
+  canvas.height = window.innerHeight * 2;
 }
 
 var zm = 1e4;
-
 
 // Troba el punt mitg del canvas en cada eix aixi per despres poder centrar les orbites en ell
 var ofX = canvas.width / 2;
@@ -19,25 +19,19 @@ var ofY = canvas.height / 2;
 var ctx = canvas.getContext("2d"); //declarem que ctx = a un canvas 2d
 ctx.strokeStyle = "#f3f3f3";
 
-zm = document.getElementById("zoom").value*1e5;
+//zm = document.getElementById("zoom").value * 1e5;
 drawPlanet();
-// TODO: scale() 
-// TODO: periode orbital per dT correcte
 
-// Detecta quan el usuari pitxa la tecla enter, per aixi activar la funció...
-document.addEventListener("keyup", function (tecla) {
-  if (tecla.key === "Enter") {
-    zm = document.getElementById("zoom").value*1e5;
+// Detecta quan el usuari pitxa el boto, per aixi activar la funció...
+document.getElementById("calcular").addEventListener("click", function () {
+    //zm = document.getElementById("zoom").value * 1e5;
     drawCanvas();
     drawPlanet();
-  }
 });
-
 
 // Funció encarregada de dibuixar el planeta al centre
 
 function drawPlanet() {
-  
   var pr = parseFloat(document.getElementById("rplaneta").value); //pr = Radi del planeta
   ctx.beginPath();
   ctx.arc(canvas.width / 2, canvas.height / 2, pr / zm, 0, 2 * Math.PI);
@@ -57,7 +51,6 @@ function drawCanvas() {
   var vXi = parseFloat(document.getElementById("vXi").value);
   var vYi = parseFloat(document.getElementById("vYi").value);
 
-
   // Temps entre punt i punt
   var t = 0e0;
   var dt = 0.0008;
@@ -71,27 +64,18 @@ function drawCanvas() {
   var sX;
   var sY;
 
-
   ctx.clearRect(0, 0, canvas.width, canvas.height); // Esborra qualsevol cosa que hi hagi al canvas abans de dibuixar una nova orbita
 
   drawPlanet();
   ctx.beginPath();
 
-
   ctx.lineWidth = 0.5; // Gruix de la linia
-
-
-
 
   var sLy = sYi;
   var sLx = sXi;
   var mt = 0;
   var limit = true;
   while (limit) {
-
-
-
-
 
     t = t + dt;
     //Calcula la acceleracio 
@@ -119,7 +103,7 @@ function drawCanvas() {
 
     //Fa que la orbita es tanqui on toqui
     if (sX > 0 && sY > sLy) {
-   
+
       ++mt;
       if (mt == 2) {
         limit = false;
@@ -128,17 +112,14 @@ function drawCanvas() {
 
         console.log(sX);
         console.log(sY);
-        
-        
       }
     }
 
 
     //Per si acas algu poses una velocitat = o > que la d'escapament aixo acaba el bucle
-    if( sX / zm + ofX > canvas.width || sY / zm + ofY > canvas.height){
+    if (sX / zm + ofX > canvas.width || sY / zm + ofY > canvas.height) {
       limit = false;
     }
-
 
   }
 

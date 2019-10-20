@@ -1,54 +1,44 @@
 <!DOCTYPE html>
-<html lang="cat" dir="ltr">
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Style i Iconos -->
   <link rel="stylesheet" href="./css/style.css">
-  <title></title>
+  <script src="https://kit.fontawesome.com/f977332251.js" crossorigin="anonymous"></script>
+  <title>TDR</title>
 </head>
 
 <body>
-  <input type="range" min="0.5" max="10" value="1" class="slider" step="0.2" id="zoom">
 
   <canvas id="canvas"></canvas>
-    
-    <fieldset class="propietats planeta">
-      <legend> Propietats Planeta </legend>
-      
-      
-      
-      <select name="planeta" id="select-planeta">
-      </select><br><br>
 
-      <label>Massa Planeta (Kg): </label>
-      <input type="text" name="radi-planeta" id="mplaneta" value="1"><br>
+  <div class="botons">
+    <button id="opcions" ><i class="fas fa-tools"></i></button>
+    <button id="calcular"><i class="fas fa-check"></i></button>
+  </div>
+  
+  <div class="opcionshide" id="opcionsDIV" > 
+    <div class="planetes">
+        <div><select name="planeta" id="select-planeta"></div>
 
-      <label>Radi Planeta (m): </label>
-      <input type="text" name="radi-planeta" id="rplaneta" value="1"><br>
+        <div><input type="text" title="Radi" name="radi-planeta" id="mplaneta" value="1"></div>
+        <div><input type="text" title="Massa" name="radi-planeta" id="rplaneta" value="1"></div>
+    </div>
+    <div class="orbitant">
+        <div><select name="predefinits" id="select-predef"></div>
 
-    </fieldset>
+        <div><input type="text" placeholder="sX" title="vX" name="posicio-inicial-x" value="1" id="sXi"></div>
+        <div><input type="text" placeholder="sY" title="vY" name="posicio-inicial-y" value="1" id="sYi"></div><br>
 
-    <fieldset class="propietats orbitant">
-      <legend>Propietats Orbitant</legend>
-
-      <select name="predefinits" id="select-predef">
-        </select><br><br>
-
-
-      <label>Posició Inicial (m): </label>
-      <input type="text" placeholder="sX" name="posicio-inicial-x" value="1" id="sXi">
-      <input type="text" placeholder="sY" name="posicio-inicial-y" value="1" id="sYi"><br>
-
-      <label>Velocitat Inicial (m/s): </label>
-      <input type="text" placeholder="vX" name="velocitat-inicial-x" value="1" id="vXi">
-      <input type="text" placeholder="vY" name="velocitat-inicial-y" value="1" id="vYi"><br>
-
-
-    </fieldset>
-    
-    <script src="./js/selectors.js" type="module"></script>
-    <script src="./js/canvas.js"></script>
-    
+        <div><input type="text" placeholder="vX" title="vX" name="velocitat-inicial-x" value="1" id="vXi"></div>
+        <div><input type="text" placeholder="vY" title="vY" name="velocitat-inicial-y" value="1" id="vYi"></div>
+    </div>
+  </div>
+  <script src="./js/selectors.js" type="module"></script>
+  <script src="./js/canvas.js"></script>
+  <script src="./js/style.js"></script>
 </body>
- 
+
 </html>
