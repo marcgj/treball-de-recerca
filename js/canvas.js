@@ -10,7 +10,21 @@ function canvasSize() {
   canvas.height = window.innerHeight * 2;
 }
 
-var zm = 1e4;
+
+var zm = 1e5;
+
+document.getElementById("zoom_+").addEventListener("click", function(){
+  var span = parseFloat(document.getElementById("zoomvalue").innerHTML);
+  document.getElementById("zoomvalue").innerHTML = (span + 0.25).toFixed(2);
+})
+document.getElementById("zoom_-").addEventListener("click", function(){ 
+  var span = parseFloat(document.getElementById("zoomvalue").innerHTML);
+  if (span>0.25){
+  document.getElementById("zoomvalue").innerHTML = (span - 0.25).toFixed(2);
+  }
+})
+
+
 
 // Troba el punt mitg del canvas en cada eix aixi per despres poder centrar les orbites en ell
 var ofX = canvas.width / 2;
@@ -19,12 +33,14 @@ var ofY = canvas.height / 2;
 var ctx = canvas.getContext("2d"); //declarem que ctx = a un canvas 2d
 ctx.strokeStyle = "#f3f3f3";
 
-//zm = document.getElementById("zoom").value * 1e5;
+
 drawPlanet();
 
 // Detecta quan el usuari pitxa el boto, per aixi activar la funció...
 document.getElementById("calcular").addEventListener("click", function () {
-    //zm = document.getElementById("zoom").value * 1e5;
+    zm = document.getElementById("zoomvalue").innerHTML * 1e5;
+    console.log(zm);
+    
     drawCanvas();
     drawPlanet();
 });

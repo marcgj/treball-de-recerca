@@ -2,6 +2,7 @@ body, html{
   margin: 0;
   overflow: hidden;
   background-color: rgb(20, 20, 20);
+
 }
 
 canvas{
@@ -15,7 +16,15 @@ canvas{
   top: 10px;
   left: 10px;
 }
-
+.botons > div{
+  display: inline;
+  padding: 0px 10px;
+}
+.botons > div > span {
+  margin: 0px 7px;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+}
 button{
   width: 40px;
   height: 40px;
@@ -74,9 +83,11 @@ button:hover{
   width: 100%;
   margin-bottom: 10px;
   padding: 5px 10px;
+
   color: white;
   background-color: transparent;
-  border-radius: 5px;
+
+  border-radius: 10px;
   border-style: solid;
 }
 .opcions div > div > input{
@@ -84,7 +95,7 @@ button:hover{
   padding: 5px 10px;
   color: white;
   background-color: transparent;
-  border-radius: 5px;
+  border-radius: 10px;
   border-style: solid;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
