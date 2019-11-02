@@ -11,7 +11,7 @@ var planetes = [{
     {
         "nom": "Lluna",
         "massa": 7349e22,
-        "radi": 3.84402e8
+        "radi": 1737100
     },
     {
         "nom": "Mart",
