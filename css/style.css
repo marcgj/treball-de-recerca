@@ -95,7 +95,7 @@ button:hover{
   padding: 5px 10px;
   color: white;
   background-color: transparent;
-  border-radius: 10px;
+  border-radius: 10verpx;
   border-style: solid;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */

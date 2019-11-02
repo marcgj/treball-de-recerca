@@ -69,7 +69,9 @@ function drawCanvas() {
 
   // Temps entre punt i punt
   var t = 0e0;
-  var dt = 0.0008;
+  var dt = (document.getElementById("zoomvalue").innerHTML**2)*0.0032;
+  console.warn(dt);
+  
 
   var aX;
   var aY;
