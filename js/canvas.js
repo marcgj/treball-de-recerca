@@ -82,7 +82,8 @@ function drawCanvas() {
   var sX;
   var sY;
 
-  ctx.clearRect(0, 0, canvas.width, canvas.height); // Esborra qualsevol cosa que hi hagi al canvas abans de dibuixar una nova orbita
+  ctx.fillStyle = "rgb(20, 20, 20)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);// Esborra qualsevol cosa que hi hagi al canvas abans de dibuixar una nova orbita
 
   drawPlanet();
   ctx.beginPath();
@@ -141,4 +142,12 @@ function drawCanvas() {
 
   }
 
+}
+
+document.getElementById("guardar").addEventListener("click", tofoto);
+
+function tofoto(){
+  var image = canvas.toDataURL("image/png");  
+
+  window.open(image);   
 }
