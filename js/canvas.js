@@ -121,7 +121,7 @@ function drawCanvas() {
     sYi = sY;
 
     //Fa que la orbita es tanqui on toqui
-    if (sX > 0 && sY > sLy) {
+    if (sX > sLx && sY > sLy) {
 
       ++mt;
       if (mt == 2) {
@@ -129,8 +129,8 @@ function drawCanvas() {
         ctx.lineTo(sLx / zm + ofX, sLy / zm + ofY);
         ctx.stroke();
 
-        console.log(sX);
-        console.log(sY);
+        console.warn("Loop Stoped");
+        
       }
     }
 
