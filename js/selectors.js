@@ -1,4 +1,6 @@
-var planetes = [{
+var planetes = [
+    
+    {
         "nom": "Personalitzat",
         "massa": 1,
         "radi": 1
@@ -17,11 +19,17 @@ var planetes = [{
         "nom": "Mart",
         "massa": 20,
         "radi": 20
+    },
+    {
+        "nom": "Sol",
+        "massa": 1989e+30,
+        "radi": 695e6
     }
 
 ];
 
-var presets = [{
+var presets = [
+    {
         "nom": "Personalitzat",
         "sX": 0,
         "sY": 0,
@@ -29,19 +37,26 @@ var presets = [{
         "vY": 0
     },
     {
-        "nom": "EEI",
+        "nom": "EEI-Terra",
         "sX": 0,
         "sY": 6771000,
         "vX": 7660,
         "vY": 0
     },
     {
-        "nom": "Lluna",
+        "nom": "Lluna-Terra",
         "sX": 0,
         "sY": 385000000,
         "vX": 1023.05556,
         "vY": 0
     },
+    {
+        "nom": "Terra-Sol",
+        "sX": 0,
+        "sY": 1.496E11,
+        "vX": 29785.2777777778,
+        "vY": 0
+    } 
 ];
 
 
